@@ -1,3 +1,44 @@
+# 프로젝트 구성 내용 요약
+본 테스트 프로젝트는 
+A-Frame Boilerplate + http-server 의 조합으로 구성되었음.
+
+설치 순서는 
+1) A-Frame Boilerplate 설치 (아래 내용 있음)
+2) npm install http-server --save-dev
+3) mkdir conf
+4) cd conf
+5) openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+6) package.json 의 scripts 에 내용 추가
+- "serve": "http-server -S -C conf/cert.pem -K conf/key.pem"
+7) npm run serve
+
+
+*openssl 이 없을 경우 아래 링크에서 설치!
+- http://slproweb.com/products/Win32OpenSSL.html
+- 본 프로젝트 학습 당시에는 Win64OpenSSL-1_1_0h.exe 로 설치했음.
+- 그리고 환경설정에서 path에 openssl 추가! (예 > C:\OpenSSL-Win64\bin )
+- 다되었으면 5)부터 시작!
+
+
+8) 패턴은 아래 링크에서 생성!
+- 파워포인트 같은 걸루 이미지 간단하게 만들어서 이미지파일로 만든 후 아래 페이지에서 UPLOAD!
+- 결과물로 patt 확장자를 갖는 패턴파일 하나랑 프린트 해서 마커로 사용할 이미지 파일을 다운로드 할 수 있음! (pdf도 있는듯!)
+- https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
+
+9) 마커에 나타나는 도형에 이미지 입히기
+- https://aframe.io/docs/0.8.0/primitives/a-image.html 에 힌트가 가득함! 그냥 이거 보면 쉽게 할 수 있음!
+- 그래도 설명을 하자면, 이미지는 <a-assets> 태그와 <img> 태그로 맹금.
+- 그리고 a-box 태그의 id를 <a-image> 태그에 # + id 형태로 입력하면 이미지가 해당 박스객체에 입혀짐.
+
+
+10) 커스텀 마커 작동 시키기
+<a-marker-camera preset='jhs' type='pattern' url='patt/pattern-jhs.patt'></a-marker-camera>
+- 공식문서나 구글에 a-marker-camera 만 쳐도 attribute 가 의미하는 바는 알 수 있으니 패스함.
+- url에 patt/pattern-jhs.patt 파일을 링크시켜주면 끝! 여기서 patt 는 프로젝트 root 위치에 생성된(1depth) 폴더임.
+
+
+
+
 # A-Frame Boilerplate
 
 Boilerplate for creating WebVR scenes with [A-Frame](https://aframe.io).
