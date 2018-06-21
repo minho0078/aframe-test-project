@@ -12,7 +12,6 @@ A-Frame Boilerplate + http-server 의 조합으로 구성되었음.
 - "serve": "http-server -S -C conf/cert.pem -K conf/key.pem"
 7) npm run serve
 
-
 *openssl 이 없을 경우 아래 링크에서 설치!
 - http://slproweb.com/products/Win32OpenSSL.html
 - 본 프로젝트 학습 당시에는 Win64OpenSSL-1_1_0h.exe 로 설치했음.
@@ -37,7 +36,11 @@ A-Frame Boilerplate + http-server 의 조합으로 구성되었음.
 - url에 patt/pattern-jhs.patt 파일을 링크시켜주면 끝! 여기서 patt 는 프로젝트 root 위치에 생성된(1depth) 폴더임.
 
 
-
+# ar.js 설치 참고 github site
+- ar.js 구글링 해서 사이트 띄우고 모바일 크롬이나 사파리로 접속해보면
+- 어? 왜 안되지 할때가 있음. 이유는 서버가 띄워진 프로토콜이 https 가 아니라서...ㅠ
+- https 로 서버를 띄우기 위한 솔루션이 있는 깃헙사이트 임. 참고!!
+- https://gist.github.com/mritzco/18dfe13096294592d5eb53e7e1a5f63c
 
 # A-Frame Boilerplate
 
